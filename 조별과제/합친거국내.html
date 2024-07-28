@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <style>
+        img {
+            width: 210px;
+            height: 300px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        .gen_sug {
+            display: flex;
+            align-items: center;
+        }
+
+        .gen_sug h1 {
+            margin-right: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .swiper {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-slide {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .movie {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .movie-details {
+            padding: 10px;
+        }
+
+        .movie-details h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .movie-details p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ccc;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: rgb(203, 120, 120);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sug">
+        <h1>국내 영화 <span>포스터를 클릭시 상세페이지로 넘어갑니다.</span></h1>
+        <div class="poster">
+        </div>
+    </div>
+
+    <div class="gen_sug">
+        <h1>장르별 추천</h1>
+        <select id="menu_select">
+            <option value="select1">미스터리&스릴러 </option>
+            <option value="select2">로맨스</option>
+            <option value="select3">정치</option>
+            <option value="select4">SF&판타지</option>
+            <option value="select5">액션</option>
+        </select>
+    </div>
+
+    <div id="select1Content" class="content">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg">
+                        <div class="movie-details">
+                            <h2>파묘</h2>
+                            <p>2024 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/rXEJ28XDQsogIGqwVEgwM2oDdpl.jpg">
+                        <div class="movie-details">
+                            <h2>헤어질 결심</h2>
+                            <p>2022 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/xpa9ybm6tYGna5LseqSXvKpSSJn.jpg">
+                        <div class="movie-details">
+                            <h2>올드보이</h2>
+                            <p>2003 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iLlEsH0c8ubTIzzEyNZ75f45Axn.jpg">
+                        <div class="movie-details">
+                            <h2>버닝</h2>
+                            <p>2018 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/3zYZ5hZUNHwgObdqbDYlS8l24FE.jpg">
+                        <div class="movie-details">
+                            <h2>검은 사제들</h2>
+                            <p>2015 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select2Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/xGrTgHXPy02rCdF2uPdfWqPvPYV.jpg">
+                        <div class="movie-details">
+                            <h2>8월의 크리스마스</h2>
+                            <p>1998 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/dgzWcjIr47ezx9wwji7yf2RCOTp.jpg">
+                        <div class="movie-details">
+                            <h2>가장 보통의 연애</h2>
+                            <p>2019 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/roHCK9J7H4ck932STWE9CYVx2av.jpg">
+                        <div class="movie-details">
+                            <h2>봄날은 간다</h2>
+                            <p>2001 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/fxKyRHx54Vbiwk98fhFqTXu3e3w.jpg">
+                        <div class="movie-details">
+                            <h2>건축학개론</h2>
+                            <p>2012 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/37CQWtvzWjzkuqInoSO4NhQrxwT.jpg">
+                        <div class="movie-details">
+                            <h2>연애의 온도</h2>
+                            <p>2013 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select3Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/eUMI51eeUxpS6wDNJoPEncAI9q5.jpg">
+                        <div class="movie-details">
+                            <h2>남산의 부장들</h2>
+                            <p>2020 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/ukVVnY9ovwl78WE5KndcpA6SnAm.jpg">
+                        <div class="movie-details">
+                            <h2>서울의 봄</h2>
+                            <p>2023 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/2ZH1Kj8NhMabTOucP9juxT03Y4Y.jpg">
+                        <div class="movie-details">
+                            <h2>1987</h2>
+                            <p>2017 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/zlFp1a9HXpbyDBaNoS1euprLbLs.jpg">
+                        <div class="movie-details">
+                            <h2>내부자들</h2>
+                            <p>2015 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/2PquLRzzEy2ECFHHfN2DesI7lw3.jpg">
+                        <div class="movie-details">
+                            <h2>효자동 이발사</h2>
+                            <p>2004 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select4Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/miHNA5DcheO7ax2qon9CmC7qa9j.jpg">
+                        <div class="movie-details">
+                            <h2>옥자</h2>
+                            <p>2017 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/jw66dQvYyXkZNA0bJ7nKvua9jDr.jpg">
+                        <div class="movie-details">
+                            <h2>설국열차</h2>
+                            <p>2013 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vOefWMYqC1S3aiCTD5MD8HeXl0Y.jpg">
+                        <div class="movie-details">
+                            <h2>승리호</h2>
+                            <p>2021 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/3l04H9ljNegDGG9gnKDhLExJvpz.jpg">
+                        <div class="movie-details">
+                            <h2>외계+인 2부</h2>
+                            <p>2024 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tqDQzYGi1EWHgUZY91YRSJLDJVf.jpg">
+                        <div class="movie-details">
+                            <h2>괴물</h2>
+                            <p>2006 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next">    </div>
+        </div>
+    </div>
+
+    <div id="select5Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/ayk6y2D5v5VACFqrPfF05MARZ9n.jpg">
+                        <div class="movie-details">
+                            <h2>범죄도시</h2>
+                            <p>2017 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/nCrh5EQYiYXEIFNrfb4ISm7TOOo.jpg">
+                        <div class="movie-details">
+                            <h2>부산행</h2>
+                            <p>2016 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4bWVILPrb7gaqwA2j6xIcg4Ak3D.jpg" alt="Movie 3">
+                        <div class="movie-details">
+                            <h2>추격자</h2>
+                            <p>2008 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1MQoYvEIvsCZMpTuBlWfbaliJes.jpg">
+                        <div class="movie-details">
+                            <h2>길복순</h2>
+                            <p>2023 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/979reU4oeyHuqQn8D8zHrmUUq6P.jpg">
+                        <div class="movie-details">
+                            <h2>마녀</h2>
+                            <p>2018 ・ 한국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiperOptions = {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: false
+            };
+
+            const swiperContainers = document.querySelectorAll('.swiper');
+            swiperContainers.forEach(container => {
+                new Swiper(container, swiperOptions);
+            });
+
+            document.getElementById('menu_select').addEventListener('change', function () {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                const selectedValue = this.value;
+                document.getElementById(`${selectedValue}Content`).classList.remove('hidden');
+            });
+
+            document.getElementById('select1Content').classList.remove('hidden');
+        });
+    </script>
+</body>
+
+</html>

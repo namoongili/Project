@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+    <style>
+        section{
+            position: relative;
+        }
+        div button{
+            position: absolute;
+            right: 12%;
+            bottom:2%;
+            border: none;
+            background-color: antiquewhite;
+        }
+        ul {
+            width: 1200px;
+            height: 800px;
+            border: 1px solid black;
+            padding: 30px;
+            margin: 0 auto;
+            background-color: beige;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul li {
+            height: 350px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        h3,
+        p {
+            margin: 0px;
+        }
+
+        .hiddenMenu {
+            width: 300px;
+            height: 180px;
+            border: 1px solid royalblue;
+            background-color: blanchedalmond;
+            transition: 0.5s;
+            opacity: 0.7;
+            position: absolute;
+            bottom: -350px;
+            font-weight: bold;
+        }
+
+        li:hover .hiddenMenu {
+            bottom: 0px;
+        }
+
+    </style>
+
+    <script>
+        let newWin = null;
+
+        function openWindow( url){
+
+           let option= "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=1200, height=800, top=0,left=0";
+            newWin = window.open(url, "myWin", "left=50,top=50, width=600, height=800");
+        }
+        
+        function closeWindow() {
+            if(newWin == null  || newWin.closed){
+                return;
+            }
+            newWin.close();
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <section>
+        <ul>
+            
+            <li><a href="javascript:openWindow('https://catchon.cjenm.com/ko/')">                
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkpDpQv6E55aoBgsox2vYc9-ftcantKYVYEA&s">
+            </a>
+                <h3>캐치온</h3>
+                <div class="hiddenMenu">🤩
+                    <p>캐치온은 CJ ENM 산하 유료 영화 채널. <br>
+                        가입, 결제를 해야만 감상할 수 있다. <br>
+                        맛보기로 30초~1분 정도 보여주고 끊어버리면서 결제를 유도하는 방식이다. </p>
+                </div>
+
+            </li>
+            <li> <a href="javascript:openWindow('https://m.kinolights.com/')"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZp9cFpdCZdPWU8L8ZgRMHRG03Iw2mAJrLw&s">
+                </a>
+                <h3>키노라이츠</h3>
+                <div class="hiddenMenu">😶‍🌫️
+                    <p>대한민국의 OTT 플랫폼의 메타 검색 엔진 서비스를 제공하는 신생 기업. <br>
+                        주요 OTT 플랫폼의 데이터베이스를 연동해 메타 검색 엔진 서비스를 구축했다. <br>
+                        조작 없는 평점 지수와 후기, 유저 개인의 평가를 기반으로 한 맞춤형 영화 추천 서비스를 제공하고 있다
+                    </p>
+                </div>
+            </li>
+
+            <li> <a href="javascript:openWindow('https://www.netflix.com/kr/')">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAAETCAMAAABDSmfhAAAAkFBMVEX////lCRTkAAD2vsDlAAv86uvlAA/kAAPrVlv1s7XsZGjoOkD1uLn87Oz51NXnIintdHf62tv/+vvxlZfzpaf73+Dym534zs/85ebwiYz4ycv3xMX1tbbpQkfrW1/oNzz0qqzsa27qTlLue37nLTPwjpH+9PXlERvsaGztcXXpR0vmHSTxl5rvgoXzp6nxkZNFggwGAAAEJUlEQVR4nO3ZaVeqQACAYRwIcyv1uluae1bW//93l1lk7zTDOeKX9/mEpPBGOAzkeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEC5YdePLMyrmZ+80ssp42jlIL/S7/ai1cv8ymG0MllK0VudJrtWm5WO+uXMrvtBKGbrL+rFVi23RM4oWnnJrxRCNuzzK+Xe9dJDdn96Dyu13FHLr+YnX8knrbobEdHVr7ryVfPRdDcyVPc8tzJa/SQLgtxKWRuGcqmX3Z/ag2irZV/v2xxwod6+sss23Sa15m6TOk/tTv317Luvm6+5W20tFGp5LTcRrC2z4+7vX7rD7Pk9V0tNUxef37o7dX7bdQ/0MV4mi2+O3eYXLXSH613f2Phy5VkutlX4Sa8eX7tFux+/92jV7b3KzzXlOLBJHXqH7ob+Hhe6xa7sQ+rghM/JCt09zr7LovtNmJO0pxcO7t2T8u5+2YeeyrsHzt1DnfsVDYLx18KtO2zco9vrqy2dzMjybp0dd+u91t491ce57zYIZrp39+j29nokUmNDxz476Vbf5fq7J8kFQbxU6W4I33o8+aXbfTzxzEASH7gq3Zuy7vOx9zCTLLoP3yNl6tDtPcYn6qRadyOaFBavl/EV8O/u+L1fLt3LuDv3Tvvu1u/zk9CmO3fg7Lr1EKj/3NW6mx936T6YGVLuW23V/XlWmzveo3umB8EPp+zr8V6ozU38YncYBpHmzc5vc+m53gG4dQvvFMqBf1nsfn7e79edTmZi/Mt4cvn6J/0snLrb5jyxn5ukuy9qe/Pax+9kYjev1K2npvsw333r66W3u07sPqt0D71PuZewUXf30AyD5rbHvTu5c6y1+zu5Xrc9B3H3+D7d62QEFccq3fpEqbtbjb/R1SE97jt2xzPKOrtXekvqrjjYV+oe36Y799ws2232PnqqeL+jng9eL9a57oenhf82OexWybTeobshgtNz52N1nv9Mi92X697171h6kP7svp4ometlkH3u494dTRSimYL8/E+hWw+C4nzdt8M3M9XdK+tOVO2OP/+v0K0HQXmdNRmtKt366VGd3eqmOFAPktVtj/3jwUy3fnpk1S2dkq3o59+5biGCINVe7NaDoL5OZp8pu3Ufy7rDaA6rJcPrYLvp7y6ph2L+S6SVOzvbjx/rz9T3o3B+b+VjxsD82fSpfqnS7T02M93afrvZHUat7tJtopk49mbjqd8aLXR3/P+GWeZqo+ZX9vf0mW69UaFvPQZvy8HM5dJradgbL9SvcMnccOvLh3wYYkV1B6Z7uO1PWovxDWLLDWdP3e71xV4EobzHtaP+L7VfDf9+560t3l8D+/9LHb+nVc/bGxgOum639QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAO/oPASBDokmBLyUAAAAASUVORK5CYII=">
+                </a>
+                <h3>넷플릭스</h3>
+                <div class="hiddenMenu">😗 
+                    <p>미국의 기업이자 전 세계 최대의 OTT 플랫폼으로 모바일 게임 유통도 하고 있다. <br>
+                        이름의 유래는 인터넷(net)+영화(flix)의 합성어다.</p>
+                </div>
+            </li>
+            <li> <a href="javascript:openWindow('https://pedia.watcha.com/ko-KR/')">
+                    <img
+                        src="data:image/jpeg;base64,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">
+                </a>
+                <h3>왓챠</h3>
+                <div class="hiddenMenu">😁
+                    <p>보고싶어요를 누른 작품이거나 높은 평점을 줬던 영화들, 혹은 팔로워들의 리스트의 영화들이 추천되는 점이 차별화되는 점이다.
+                        <br> 다른 이용자가 매긴 별점이 노출되지 않는 넷플릭스와는 차별되는 왓챠만의 강점이다.
+                    </p>
+                </div>
+            </li>
+            <li> <a href="javascript:openWindow('https://www.wavve.com/')">
+                    <img src="https://img.pooq.co.kr/service30/profile/pooq.png"></a>
+                <h3>웨이브</h3>
+                <div class="hiddenMenu">😳
+                    <p>KBS, MBC, SBS로 이루어진 지상파 3사와 SK텔레콤의 합작으로 만들어진 대한민국의 OTT 서비스<div class="br"></div>
+                        TVING와 합병 절차가 지연되고 있는 상태라고 한다.</p>
+                </div>
+            </li>
+
+            <li> <a href="javascript:openWindow('https://www.rottentomatoes.com/')">
+                    <img
+                        src="https://image.cine21.com/resize/cine21/movie/2018/0302/11_16_52__5a98b41410086[S800,800].JPG"></a>
+                <h3>로튼 토마토</h3>
+                <div class="hiddenMenu">🤤<p>이름은 썩은 토마토라는 뜻의 Rotten Tomatoes인데, 실제로 재미없는 영화를 Rotten이라 부른다. <br>
+                    특히 평론 리뷰 모음 사이트로 유명하다.
+                </p></div>
+            </li>
+            <div><button onclick="closeWindow()"> 팝업 창 닫기 </button></div>
+             
+
+        </ul>
+    </section>
+
+
+</body>
+
+</html>
