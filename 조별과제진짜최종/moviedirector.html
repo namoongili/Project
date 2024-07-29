@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 팝업 예제</title>
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="해외영화디자인.css" />
+    <style>
+       
+      main {
+        height: 800px;
+      }
+      header {
+        background-color: #96e6a5;
+      }
+
+      footer {
+        background-color: #96e6a5;
+      }
+      .logo img {
+        width: 50px;
+        height: auto;
+        display: block;
+      }
+
+      .video_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+      }
+      .main_comment {
+        color: white;
+      }
+        /**/
+        nav {
+            margin: 20px;
+        }
+
+        /**/
+        .directors-button {
+            width: 150px;
+            margin: 30px;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .directors-content {
+            width: 1200px;
+            height: 600px;
+            padding: 10px;
+            display: none;
+        }
+
+        .directors-button.active {
+            background-color: darkseagreen;
+        }
+
+        .directors-content.active {
+            display: block;
+        }
+
+        /**/
+        section {
+            display: flex;
+            margin-left: 100px;
+            height: 700px;
+        }
+
+        .haha {
+            display: flex;
+        }
+        .direc_img img{
+            padding: 30px;
+        }
+        .films {
+            margin-top: 10px;
+            padding: 20px;
+            width: 700px;
+
+        }
+
+        /**/
+
+        .video-popup {
+            width: 800px;
+            height: 650px;
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            /* 초기에는 숨겨진 상태 */
+            z-index: 999;
+            /* 다른 요소 위에 표시하기 위해 z-index 설정 */
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .video-popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: #ccc;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /**/
+
+        .films_list ul {
+            list-style: none;
+            padding: 10px;
+            width: 500px;
+        }
+
+        .films_list li {
+            padding: 10px;
+            border: none;
+        }
+    </style>
+    <script>
+        document.getElementById('year_2024');
+
+        function openTab(evt, directorsName) {
+            const directorsContents = document.querySelectorAll(".directors-content");
+            for (const content of directorsContents) {
+                content.style.display = 'none';
+            }
+
+            const directorsButtons = document.querySelectorAll(".directors-button");
+            for (const button of directorsButtons) {
+                button.classList.remove('active');
+            }
+
+            document.getElementById(directorsName).style.display = 'block';
+            evt.currentTarget.classList.add('active');
+        }
+
+
+        //
+        function showVideoPopup(videoId) {
+            var videoPopup = document.getElementById(videoId);
+            videoPopup.style.display = 'block';
+        }
+
+        function closeVideo(videoId) {
+            var videoPopup = document.getElementById(videoId);
+            videoPopup.style.display = 'none';
+        }
+        //
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header_content">
+          <div class="logo_div">
+            <a href="index.html" class="logo"></a>
+          </div>
+          <div class="header_user">
+            <ul>
+              <li><a href="login.html">로그인</a></li>
+              <li><a href="joinus.html">회원가입</a></li>
+            </ul>
+          </div>
+          <div class="header_search">
+            <div>
+              <form action="#">
+                <label for="">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" />
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <nav>
+        <h1>아카데미 감독상 수상자</h1>
+        <div class="directors">
+            <button class="directors-button active" onclick="openTab(event,'year_2024')">2024년</button>
+            <button class="directors-button" onclick="openTab(event,'year_2020')">2020년</button>
+            <button class="directors-button" onclick="openTab(event,'year_2014')">2014년</button>
+        </div>
+
+    </nav>
+
+    <section>
+
+        <div id="year_2024" class="directors-content">
+            <div class="haha">
+                <div class="direc_img">
+                    <h1> 2024년 감독상 수상</h1>
+                    <img src="https://mydaily.co.kr/photos/2019/05/17/2019051710553846051_l.jpg" width="300px"
+                        height="350px">
+
+                </div>
+                <div class="films">
+
+                    <p>
+                    <h2> 크리스토퍼 놀란 </h2>
+                    <h4>특징 : 영국과 미국의 영화 감독이자, 각본가. <br>
+                        아날로그 애호가로 필름으로 영화 전체를 찍어내는 몇 안되는 감독이다. <br>
+                    </h4>
+                    </p>
+                    <h1>🎥필모그래피</h1>
+                    <div id="videoPopup1" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup1')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/oSqK_v6zPoM?si=4yM2sK-AZuPx_kFX&amp;start=3"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup2" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup2')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/PL54eVOSTZ8?si=jU8lwsuNJw80my29"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div id="videoPopup3" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup3')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/sLr4yCSPMLU?si=Q_05ZroB8Uguj8WX"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup4" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup4')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/k6Bg9FROE4o?si=9vUMoE09_UMjle8Q"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup5" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup5')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/XNyU-PDnjTo?si=CW-hp0SpHFYwm0bl"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup6')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/d2VN6NNa9BE?si=dyKf4Ezqvv9htYCX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup7" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup7')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/XUhRA_ObaDo?si=r1OrpEpyDOrw2QMM"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup8" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup8')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/IW_khaePCBE?si=fsfb10rqTUiZwJe-&amp;start=5"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="films_list">
+                        <ul>
+                            <li><button onclick="showVideoPopup('videoPopup1')">20224년 감독상 수상작 오펜하이머</button></li>
+                            <li> <button onclick="showVideoPopup('videoPopup2')">2001년 메멘토</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup3')">2005년 베트맨 비긴즈</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup4')">2008년 다크나이트</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup5')">2010년 인셉션</button>
+                            </li>
+                            <li>
+                                <button onclick="showVideoPopup('videoPopup6')">2014년 인터스텔라</button>
+                            </li>
+                            <li><button onclick="showVideoPopup('videoPopup7')">2017년 덩케르크</button></li>
+                            <li><button onclick="showVideoPopup('videoPopup8')">2020년 테넷</button></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="year_2020" class="directors-content">
+            <div class="haha">
+                <div class="direc_img">
+                    <h1> 2020년 감독상 수상</h1>
+                    <img src="https://i.namu.wiki/i/mNW9_FbnPjisJ9qbest7Ik1vSU_k5uEcYqnHQxdDR3rdp_Sw8aOX3a-SWhdCau_c3FCP5pfg4BXSjSiyFbSveD44OwH86DlSaxKsitlPmayGWmG9lXAYshmj8suPvJiVLxECicYjgqfya5aprr_mXA.webp"
+                        width="300px" height="350px">
+
+                </div>
+
+
+                <div class="films">
+                    <p>
+                    <h2> 봉준호 (일명 봉테일 ) </h2>
+                    <h4>감독으로서 한국 영화 최고, 최다, 최초의 기록을 고루 보유하고 있으며, <br>
+                        예술성과 오락성 그리고 대중성과 독창성을 모두 인정받은 영화감독 중 한 명으로 꼽힌다. <br>
+                    </h4>
+                    </p>
+                    <h1>🎥필모그래피</h1>
+                    <div id="videoPopup9" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup9')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jBdRhhSt3Bc?si=DqTDdKBzkquEIA-t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup12" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup12')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/G_x-Y2VQddM?si=33z2vQbq6aitjDmx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div id="videoPopup13" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup13')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9JTEXUMUSTk?si=gwPegOcA65rfKC3o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup14" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup14')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fiTBfRswb5g?si=4Envpf_JAY_LC9f4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup15" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup15')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/e7jyYZS7nf8?si=WiBESyUbjNyM6Nb7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    
+
+                    <div id="videoPopup17" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup17')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/B_nzi46Dllg?si=h_8gXq7CDbGw6qUk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup18" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup18')">닫기</button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eOdMVj1mnHE?si=etUF2lil5BF6e3Zm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="films_list">
+                        <ul>
+
+                            <li><button onclick="showVideoPopup('videoPopup9')">2020년 감독상 수상작 기생충</button></li>
+                            <li> <button onclick="showVideoPopup('videoPopup12')">2000년 플란다스의 개</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup13')">2003년 살인의 추억</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup14')">2006년 괴물</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup15')">2009년 마더</button>
+                            </li>
+                            <li><button onclick="showVideoPopup('videoPopup17')">2013년 설국열차</button></li>
+                            <li><button onclick="showVideoPopup('videoPopup18')">2017년 옥자</button></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="year_2014" class="directors-content">
+            <div class="haha">
+                <div class="direc_img">
+                    <h1> 2014년 감독상 수상</h1>
+                    <img src="https://i.namu.wiki/i/skJz5MYqSYe2l82ev1_XR2C02kUXQWVgy_ZBAR0l2HoHjrzigcgsJCmhjUv_z9NUDkluFUnG2ynBHTwyEwNSGtyDVKVB7DovQz8dD7ZXfzatCZi7SgmxbWWUTg6c5zceUOXzJLNGdXvg9cEjqjyvFw.webp"
+                        width="300px" height="350px">
+
+                </div>
+
+
+                <div class="films">
+                    <p>
+                    <h2> 알폰소 쿠아론 </h2>
+                    <h4>특징 : 멕시코 출신의 영화감독. <br>
+                       《그래비티》가 엄청난 호평을 받으며 오스카 감독상과 편집상을 수상했다. <br>
+                        장르를 넘나들며 영화를 만들었지만 작품마다 가톨릭적인 색채가 묻어나는 게 특징.
+                    </h4>
+                    </p>
+                    <h1>🎥필모그래피</h1>
+                    <div id="videoPopup21" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup21')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/I9mbNcmGNQI?si=FuO5I3AsZSJEtKUp"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup22" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup22')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/utkZ8p_zp50?si=OoF1xzemgDt-dPzR"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div id="videoPopup23" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup23')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/FNHkrMZJowk?si=htQJtRPesENMCoXL"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup24" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup24')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/07OiMghLXao?si=NRr2iV9M-B2Euxa1"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup25" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup25')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/pzaC47LZsNw?si=e3_mA93rOgewDIQb"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="videoPopup26" class="video-popup">
+                        <button class="close-button" onclick="closeVideo('videoPopup26')">닫기</button>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/_StPwBbGY8o?si=FmmVuaQzZmujiiDE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+
+
+                    <div class="films_list">
+                        <ul>
+
+                            <li><button onclick="showVideoPopup('videoPopup21')">2014년 감독상 수상작 그래비티</button></li>
+                            <li> <button onclick="showVideoPopup('videoPopup22')">1995년 소공녀</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup23')">2004년 해리포터와 아즈카반의 죄수</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup24')">2006년 판의 미로</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup25')">2006년 칠드런 오브 맨</button>
+                            </li>
+                            <li> <button onclick="showVideoPopup('videoPopup26')">2018년 로마</button>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+   </section>
+   <footer>
+    <div class="footer_content">
+      <ul>
+        <li><a href="domestic.html">국내영화</a></li>
+        <li><a href="foreign.html">해외영화</a></li>
+        <li><a href="moviedirector.html">Moive Director</a></li>
+        <li><a href="movieapp.html">관련 어플</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
+</html>
