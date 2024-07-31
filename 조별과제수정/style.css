@@ -1,0 +1,215 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;    
+    padding: 0px
+}
+
+body{
+    background-color:#1b1b1b;
+}
+header{
+   /* border: 0.5px solid #96e6a5; */   
+    height: 90px;
+
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+
+    padding: 10px;
+    background-color:#1b1b1b;
+   
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+     
+     
+    z-index: 9999;
+        
+ 
+}
+.header_content{
+    display: flex;
+    padding-left: 50px;
+  
+   
+  
+}
+.logo_div{
+    width: 100px;
+    margin-top: 20px;
+    
+}
+.logo{
+    text-decoration: none;
+     
+    background-image: url( https://www.wavve.com/img/ci-wavve.5b304973.svg  );
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+ 
+ 
+    cursor: pointer;
+    display: flex;
+    width: 100px;
+    height: 20px;
+    
+    border-radius: 10px;
+
+}
+.header_user{
+    width: 1500px;
+ 
+}
+.header_user ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header_user a{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    padding: 0 20px;
+    line-height: 70px;
+    text-decoration: none;
+    color: #f7eeee;
+}
+.header_search{
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+}
+.header_search div{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.header_search form{
+    display: block;
+}
+.header_search label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 7px 10px 8px 36px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+}
+.header_search i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+}
+.header_search input{
+    width: 100%;
+    padding: 0 0 1px;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+    background: transparent;
+}
+
+.main_container{
+ 
+    height: 1200px;
+
+    position: relative;
+
+}
+
+main{
+    
+    /* header 높이 만큼 내려온다 */
+    margin-top: 90px;
+
+ 
+    height: 100%;
+    background-image: url("https://an2-img.amz.wtchn.net/image/v2/gjCZqhOCkztwfuLmz4lXbA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TmpBNE9EZ3lNVFEzTlRJeU5qWTJOQ0lzSW5FaU9qZ3dMQ0ozSWpveE9USXdmUS5TeU1STUpTOC1XdEhOSFRJd3JJanJLdi1CNGZFSklsaDNiNWF4R19BeGxr");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    opacity: 1;
+}
+.main_div{
+    width: 1000px;
+    height: 800px;
+    display: flex;
+}
+.main_img{
+    width: 50%;
+}
+.main_img img{
+    width: 300px;
+    height: 400px;
+    margin-top: 150px;
+    margin-left: 50px;
+}
+.main_comment{
+    width: 50%;
+    text-align: center;
+}
+.main_comment h3{
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+}
+.main_comment h2{
+    margin-top: 150px;
+    font-size: 60px;
+    opacity: 0.7;
+}
+.main_comment p{
+    margin-top: 150px;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
+}
+footer{
+     /* height: 90px; */
+    /* border: 1px solid #72CC82; */
+    background-color:#1b1b1b;
+
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+ 
+}
+.footer_content{
+    width: 100%;
+}
+.footer_content ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    text-align: center;
+}
+.footer_content li{
+    width: 20%;
+    margin-left: 50px;
+    line-height: 70px;
+}
+.footer_content a{
+    text-decoration: none;
+    color: #f1efef;
+    border-radius: 10%;
+}

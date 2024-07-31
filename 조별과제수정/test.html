@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <style>
+        img {
+            width: 210px;
+            height: 300px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        .gen_sug {
+            display: flex;
+            align-items: center;
+        }
+
+        .gen_sug h1 {
+            margin-right: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .swiper {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-slide {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .movie {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .movie-details {
+            padding: 10px;
+        }
+
+        .movie-details h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .movie-details p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ccc;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: rgb(203, 120, 120);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sug">
+        <h1>추천 영화 <span>포스터를 클릭시 상세페이지로 넘어갑니다.</span></h1>
+        <div class="poster">
+        </div>
+    </div>
+
+    <div class="gen_sug">
+        <h1>장르별 추천</h1>
+        <select id="menu_select">
+            <option value="select1">판타지</option>
+            <option value="select2">SF</option>
+            <option value="select3">로맨스</option>
+            <option value="select4">애니메이션</option>
+            <option value="select5">공포</option>
+        </select>
+    </div>
+
+    <div id="select1Content" class="content">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://an2-img.amz.wtchn.net/image/v2/K2TvL_RD8QOc9hbPZKHx2w.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM0Y2YlcxNVluSm9lSHBvTTJGd09IUTViR2xwSW4wLjFvcEN4aFZlc1lmeXRMaHBtaUJlSEVwLWRGR0RyOWNuOWRPMTUzZFcyVUk">
+                        <div class="movie-details">
+                            <h2>행복한 라짜로</h2>
+                            <p>2018 ・ 이탈리아</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://i.namu.wiki/i/z2ZTCeCs-zvYFvqoZEVVJKrzExrJZ1yf8h0DJg_DBg7nYr1kuaNT5LPJEZrZZ0Cowhf-AP5HzO5HjVm55vNTnobxzbKTwVGqd-GNwxZd0_td_KF1GdNziPiGFwbaNQ9U0zj0Wc5cKa9wlTyTNtFqrg.webp">
+                        <div class="movie-details">
+                            <h2>아바타: 물의 길</h2>
+                            <p>2022 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://i.namu.wiki/i/Tg6bVzpVv52RPyhfFElKTNEWrHvumoLrYq4mjxhkQ48Cg3pHiXpKfEiKWgKiF_3M5uKWtNcyFVG5Km79FKmMK-tRgQly0pPcBQCcaJCj9xvkFP9bi37boeJrUJaesDs0fUlqKA5Mi9oB8s2s5NXpAA.webp">
+                        <div class="movie-details">
+                            <h2>알라딘-램프의 신</h2>
+                            <p>2019 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select2Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://i.namu.wiki/i/5bw7Yycf25kgRk8zcW-M1vU5hf-8AhiF-dB03X86NjwtuH2pFTM-uf8JCOqEoMdGMLH3S1HNaMiT9ZyU5-q0QwiUovW5TRBeXDgpln8HVwf14wYhWnxJdmIDVAEVZ1c1BG3bA-DgbakYnFpUj-1nMg.webp">
+                        <div class="movie-details">
+                            <h2>인터스텔라</h2>
+                            <p>2014 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="http://monthly.chosun.com/up_fd/Mdaily/2023-11/bimg_thumb/20231153194273499.jpg">
+                        <div class="movie-details">
+                            <h2>혹성탈출: 새로운 시대</h2>
+                            <p>2024 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://i.namu.wiki/i/z2ZTCeCs-zvYFvqoZEVVJKrzExrJZ1yf8h0DJg_DBg7nYr1kuaNT5LPJEZrZZ0Cowhf-AP5HzO5HjVm55vNTnobxzbKTwVGqd-GNwxZd0_td_KF1GdNziPiGFwbaNQ9U0zj0Wc5cKa9wlTyTNtFqrg.webp">
+                        <div class="movie-details">
+                            <h2>아바타: 물의 길</h2>
+                            <p>2022 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select3Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://www.newsflix.co.kr/news/photo/202406/13359_13074_1546.png">
+                        <div class="movie-details">
+                            <h2>라라랜드</h2>
+                            <p>2016 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://an2-img.amz.wtchn.net/image/v2/gbBXVfC6ASkFsb1llG-vzg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpZNE5EVXdOekV4TmpZMk9EVTVNRGNpZlEuRktVSno0NUJSdXZBbkl3dDhVcEczQWRIcWlyVWQ1d21NUHRweG0tSWNRdw">
+                        <div class="movie-details">
+                            <h2>비포 선라이즈</h2>
+                            <p>1955 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://an2-img.amz.wtchn.net/image/v2/LLKkpK4CTVikWDuebF7COA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpVNE1URXpNVEEyT0RVd01URTFOVFFpZlEubFdaOVhyUkw4V0hzM1hlZV9yeThzcEVaT3lUdlZMR21HT3FrdDRTMUw1UQ">
+                        <div class="movie-details">
+                            <h2>러브 라이즈 블리딩</h2>
+                            <p>2024 ・ 영국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://an2-img.amz.wtchn.net/image/v2/ZSvopUs4Fon7It7hrZc2CQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFNE9UTTJOelV4TVRZME5EWTBOamNpZlEuczE0Vmo0SWE4UVdyU0ZyYXl5WmdHbEdnTTF5NWpiQ3RQbU4wcGpIMnJvYw">
+                        <div class="movie-details">
+                            <h2>프렌치 수프</h2>
+                            <p>2023 ・ 프랑스</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select4Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://an2-img.amz.wtchn.net/image/v2/B6qxRdfsYlzgPgs7wwv2PQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpneU1EUXpORGMwTlRZeU9UZ3dOeklpZlEuZlQ5cEpoVU1PMHZvWHNlR1ZfelVGQURwR0FUZkd3ZmdLZ3pFMEJ0dl9GUQ" alt="Movie 1">
+                        <div class="movie-details">
+                            <h2>슈퍼배드 4</h2>
+                            <p>2024 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://spnimage.edaily.co.kr/images/photo/files/NP/S/2023/11/PS23111000116.jpg">
+                        <div class="movie-details">
+                            <h2>인사이드 아웃2</h2>
+                            <p>2024 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://an2-img.amz.wtchn.net/image/v2/VS2r6R1i4wUQtLzXueSpEw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpNME1qUTJNekE1T0RRNE5EVXhPU0o5LlZQSzczZFRabGFUeHdHNTZQVHBHMTljMjlRRGNrd1RNSlZsU2ozaEpzMWM">
+                        <div class="movie-details">
+                            <h2>명탐정 코난: <br>100만 달러의 펜타그램</h2>
+                            <p>2024 ・ 일본</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div id="select5Content" class="content hidden">
+        <div class="swiper promotion">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/izzk8dbmrLowcoGbFaebqJvzyXg.jpg" alt="Movie 1">
+                        <div class="movie-details">
+                            <h2>세븐</h2>
+                            <p>2017 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/zAEhUJB5ytmDtjVZP0aooPkdGyq.jpg" alt="Movie 2">
+                        <div class="movie-details">
+                            <h2>유전</h2>
+                            <p>2017 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/paPvmoLgUUQojsSdAZmf7dwkKGT.jpg" alt="Movie 3">
+                        <div class="movie-details">
+                            <h2>겟아웃</h2>
+                            <p>2017 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="movie">
+                        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1RxhzwFkAUqMt215Brb06u8P8pn.jpg" alt="Movie 4">
+                        <div class="movie-details">
+                            <h2>높은 풀 속에서</h2>
+                            <p>2017 ・ 미국</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiperOptions = {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: false
+            };
+
+            const swiperContainers = document.querySelectorAll('.swiper');
+            swiperContainers.forEach(container => {
+                new Swiper(container, swiperOptions);
+            });
+
+            document.getElementById('menu_select').addEventListener('change', function () {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                const selectedValue = this.value;
+                document.getElementById(`${selectedValue}Content`).classList.remove('hidden');
+            });
+
+            document.getElementById('select1Content').classList.remove('hidden');
+        });
+    </script>
+</body>
+
+</html>

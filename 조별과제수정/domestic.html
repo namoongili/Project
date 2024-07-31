@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/4ec79785b5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <style>
+        *{
+    box-sizing: border-box;
+
+}
+        header{
+    border: 0.5px solid #96e6a5;
+    height: 70px;
+    background-color: #96e6a5;
+    flex-shrink: 0;
+}
+.header_content{
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.logo_div{
+    width: 100px;
+    height: 70px;
+}
+.logo{
+    text-decoration: none;
+    background-image: url(https://i.ibb.co/B2nhGpC/main-logo.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    display: flex;
+    width: 100px;
+    height: 98%;
+}
+.header_user{
+    width: 1500px;
+}
+.header_user ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header_user a{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    padding: 0 20px;
+    line-height: 70px;
+    text-decoration: none;
+    color: #000;
+}
+.header_search{
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+}
+.header_search div{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.header_search form{
+    display: block;
+}
+.header_search label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    padding: 7px 10px 8px 36px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+}
+.header_search i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+}
+.header_search input{
+    width: 100%;
+    padding: 0 0 1px;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+    background: transparent;
+}
+  
+
+        main a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        img {
+            width: 210px;
+            height: 300px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        .gen_sug {
+            display: flex;
+            align-items: center;
+        }
+
+        .gen_sug h1 {
+            margin-right: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .swiper {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-slide {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .movie {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            height: 300px;
+            /* 포스터의 높이에 맞춰 설정 */
+        }
+
+        .movie
+
+        .movie-hover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .movie:hover .movie-hover {
+            transform: translateY(0);
+        }
+
+        .movie-details {
+            padding: 10px;
+        }
+
+        .movie-details h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .movie-details p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ccc;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: rgb(203, 120, 120);
+        }
+
+
+        main {
+            height: 700px;
+            padding-top: 30px;
+        }
+
+        .rating {
+            color: gold;
+            /* 별의 색상 */
+            font-size: 20px;
+            /* 별의 크기 */
+            padding: 10px 0;
+            /* 별 위아래 간격 */
+        }
+        .sug{
+            display: flex;
+            margin-left: 40px;
+            line-height: 60px;
+        }
+        .star {
+            cursor: pointer;
+            transition: color 0.2s;
+            /* 색상 변경 애니메이션 */
+        }
+
+        .star:hover,
+        .star:hover~.star {
+            color: darkorange;
+            /* 호버 시 색상 변경 */
+        }
+        footer{
+    height: 90px;
+    border: 1px solid #72CC82;
+    background-color: #96e6a5;
+}
+.footer_content{
+    width: 100%;
+}
+.footer_content ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer_content li{
+    width: 20%;
+    margin-left: 50px;
+    line-height: 70px;
+}
+.footer_content a{
+    text-decoration: none;
+    color: #000;
+}
+.span{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+#menu_select{
+    margin-left: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header_content">
+          <div class="logo_div">
+            <a href="index.html" class="logo"></a>
+          </div>
+          <div class="header_user">
+            <ul>
+              <li><a href="login.html">로그인</a></li>
+              <li><a href="joinus.html">회원가입</a></li>
+            </ul>
+          </div>
+          <div class="header_search">
+            <div>
+              <form action="#">
+                <label for="">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" />
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+    <section>
+        <div class="sug">
+            <h1>국내 영화 추천 </h1>
+                <div class="gen_sug">
+    
+                    <select id="menu_select">
+                        <option value="select1">미스터리&스릴러 </option>
+                        <option value="select2">로맨스</option>
+                        <option value="select3">정치</option>
+                        <option value="select4">SF&판타지</option>
+                        <option value="select5">액션</option>
+                    </select>
+                </div>
+        
+                <div class="span"><span>포스터를 클릭시 상세페이지로 넘어갑니다.</span></div>
+            <div class="poster">
+            </div>
+        </div>
+    </section>
+
+    <main>
+       
+
+
+        <div id="select1Content" class="content">
+            <div class="swiper promotion">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="파묘.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg"> 
+                              
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>허리가 끊겨 양분된 후 힘 못 쓰는 이야기, 편의적 보이스오버로 시각적 상상력을 대체한 맥없는 클라이맥스.</p>
+                                </div>
+                              
+                        </a>
+                        </div>
+                     
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="moviepage.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/rXEJ28XDQsogIGqwVEgwM2oDdpl.jpg">
+                                <div class="movie-details">
+                                    <h2>헤어질 결심</h2>
+                                    <p>2022 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>파란색으로도 보이고 녹색으로도 보이는 그 옷처럼, 미결과 영원 사이에서 사무치도록.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="올드보이.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/xpa9ybm6tYGna5LseqSXvKpSSJn.jpg">
+                                <div class="movie-details">
+                                    <h2>올드보이</h2>
+                                    <p>2003 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>치밀한 덫과 강력한 도끼를 함께 갖춘 괴력의 영화.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="버닝.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iLlEsH0c8ubTIzzEyNZ75f45Axn.jpg">
+                                <div class="movie-details">
+                                    <h2>버닝</h2>
+                                    <p>2018 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>지금이곳 청춘들의 고투와 분노를 다룬다는 점에서 한국적이고, 예술과 인식의 토대를 되묻는다는 점에서 근원적이다.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="검은사제들.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/3zYZ5hZUNHwgObdqbDYlS8l24FE.jpg">
+                                <div class="movie-details">
+                                    <h2>검은 사제들</h2>
+                                    <p>2015 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span the="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>모험적 시도에 스타파워가 제대로 기여한 경우.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div id="select2Content" class="content hidden">
+            <div class="swiper promotion">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="8월의크리스마스.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/xGrTgHXPy02rCdF2uPdfWqPvPYV.jpg">
+                                <div class="movie-details">
+                                    <h2>8월의 크리스마스</h2>
+                                    <p>1998 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>지난 20년간 한국 멜로는 결국 허진호였다.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="가장보통의연애.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/dgzWcjIr47ezx9wwji7yf2RCOTp.jpg">
+                                <div class="movie-details">
+                                    <h2>가장 보통의 연애</h2>
+                                    <p>2019 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>연애보다 알콜중독 치료를 먼저 받아야할 듯</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="봄날은간다.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/roHCK9J7H4ck932STWE9CYVx2av.jpg">
+                                <div class="movie-details">
+                                    <h2>봄날은 간다</h2>
+                                    <p>2001 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>허진호와 이영애와 유지태, 그들 각자의 최고작.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="건축학개론.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/fxKyRHx54Vbiwk98fhFqTXu3e3w.jpg">
+                                <div class="movie-details">
+                                    <h2>건축학개론</h2>
+                                    <p>2012 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>각질 하나 없이 생생한 감성의 결.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="연애의온도.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/37CQWtvzWjzkuqInoSO4NhQrxwT.jpg">
+                                <div class="movie-details">
+                                    <h2>연애의 온도</h2>
+                                    <p>2018 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span the="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </div>
+                                    <p>조금만 식어도 상대방은 시리도록 차갑게 느끼는게 연애의 온도.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div id="select3Content" class="content hidden">
+            <div class="swiper promotion">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="남산의부장들.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/eUMI51eeUxpS6wDNJoPEncAI9q5.jpg">
+                                <div class="movie-details">
+                                    <h2>남산의 부장들</h2>
+                                    <p>2017 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="서울의봄.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/ukVVnY9ovwl78WE5KndcpA6SnAm.jpg">
+                                <div class="movie-details">
+                                    <h2>서울의 봄</h2>
+                                    <p>2013 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="1987.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/2ZH1Kj8NhMabTOucP9juxT03Y4Y.jpg">
+                                <div class="movie-details">
+                                    <h2>1987</h2>
+                                    <p>2017 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="내부자들.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/zlFp1a9HXpbyDBaNoS1euprLbLs.jpg">
+                                <div class="movie-details">
+                                    <h2>내부자들</h2>
+                                    <p>2020 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="효자동이발사.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/zlFp1a9HXpbyDBaNoS1euprLbLs.jpg">
+                                <div class="movie-details">
+                                    <h2>효자동 이발사</h2>
+                                    <p>2020 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div id="select4Content" class="content hidden">
+            <div class="swiper promotion">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="옥자.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/miHNA5DcheO7ax2qon9CmC7qa9j.jpg">
+                                <div class="movie-details">
+                                    <h2>옥자</h2>
+                                    <p>2013 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="설국열차.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/jw66dQvYyXkZNA0bJ7nKvua9jDr.jpg">
+                                <div class="movie-details">
+                                    <h2>설국열차</h2>
+                                    <p>2018 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="승리호.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vOefWMYqC1S3aiCTD5MD8HeXl0Y.jpg">
+                                <div class="movie-details">
+                                    <h2>승리호</h2>
+                                    <p>2006 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="외계인2부.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/3l04H9ljNegDGG9gnKDhLExJvpz.jpg">
+                                <div class="movie-details">
+                                    <h2>외계+인 2부</h2>
+                                    <p>2017 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="괴물.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tqDQzYGi1EWHgUZY91YRSJLDJVf.jpg">
+                                <div class="movie-details">
+                                    <h2>괴물</h2>
+                                    <p>2021 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div id="select5Content" class="content hidden">
+            <div class="swiper promotion">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="범죄도시.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/ayk6y2D5v5VACFqrPfF05MARZ9n.jpg">
+                                <div class="movie-details">
+                                    <h2>범죄도시</h2>
+                                    <p>2010 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="부산행.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/nCrh5EQYiYXEIFNrfb4ISm7TOOo.jpg">
+                                <div class="movie-details">
+                                    <h2>부산행</h2>
+                                    <p>2013 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="추격자.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4bWVILPrb7gaqwA2j6xIcg4Ak3D.jpg">
+                                <div class="movie-details">
+                                    <h2>추격자</h2>
+                                    <p>2013 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="길복순.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1MQoYvEIvsCZMpTuBlWfbaliJes.jpg">
+                                <div class="movie-details">
+                                    <h2>길복순</h2>
+                                    <p>2019 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> <!-- 별 모양 문자 -->
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="마녀.html">
+                            <div class="movie">
+                                <img
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/979reU4oeyHuqQn8D8zHrmUUq6P.jpg">
+                                <div class="movie-details">
+                                    <h2>마녀</h2>
+                                    <p>2016 ・ 한국</p>
+                                </div>
+                                <div class="movie-hover">
+                                    <div class="rating">
+                                        <span class="star">&#9733;</span> <!-- 별 모양 문자 -->
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                    </div>
+                                    <p>ㅁㄴㅇㅁㄴㅇ.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".promotion", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        const menuSelect = document.getElementById("menu_select");
+        const contents = document.querySelectorAll(".content");
+
+        menuSelect.addEventListener("change", (event) => {
+            contents.forEach((content) => {
+                content.classList.add("hidden");
+            });
+            const selectedContent = document.getElementById(`${event.target.value}Content`);
+            selectedContent.classList.remove("hidden");
+        });
+    </script>
+    <footer>
+        <div class="footer_content">
+          <ul>
+            <li><a href="domestic.html">국내영화</a></li>
+            <li><a href="foreign.html">해외영화</a></li>
+            <li><a href="moviedirector.html">Moive Director</a></li>
+            <li><a href="movieapp.html">관련 어플</a></li>
+          </ul>
+        </div>
+      </footer>
+</body>
+
+</html>

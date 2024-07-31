@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    border: 0.5px solid #96e6a5;
+    height: 70px;
+    background-color: #96e6a5;
+    flex-shrink: 0;
+}
+
+.header_content {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.logo_div {
+    width: 100px;
+    height: 70px;
+}
+
+.logo {
+    text-decoration: none;
+    background-image: url(https://i.ibb.co/B2nhGpC/main-logo.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    display: flex;
+    width: 100px;
+    height: 98%;
+}
+
+.header_user {
+    width: 1500px;
+}
+
+.header_user ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header_user a {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    padding: 0 20px;
+    line-height: 70px;
+    text-decoration: none;
+    color: #000;
+}
+
+.header_search {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+}
+
+.header_search div {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.header_search form {
+    display: block;
+}
+
+.header_search label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    padding: 7px 10px 8px 36px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+}
+
+.header_search i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+}
+
+.header_search input {
+    width: 100%;
+    padding: 0 0 1px;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+    background: transparent;
+}
+
+section {
+    border: 0.5px solid #72CC82;
+    height: 70px;
+    margin-bottom: px;
+    background-color: #72CC82;
+}
+
+main a {
+    text-decoration: none;
+    color: #fff;
+}
+
+img {
+    width: 210px;
+    height: 300px;
+}
+
+span {
+    font-size: 12px;
+}
+
+.gen_sug {
+    display: flex;
+    align-items: center;
+}
+
+.gen_sug h1 {
+    margin-right: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.swiper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.movie {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    height: 300px;
+    /* 포스터의 높이에 맞춰 설정 */
+}
+
+.movie .movie-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.movie:hover .movie-hover {
+    transform: translateY(0);
+}
+
+.movie-details {
+    padding: 10px;
+}
+
+.movie-details h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.movie-details p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ccc;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: rgb(203, 120, 120);
+}
+
+
+main {
+    height: 700px;
+    padding-top: 30px;
+}
+
+.rating {
+    color: gold;
+    /* 별의 색상 */
+    font-size: 20px;
+    /* 별의 크기 */
+    padding: 10px 0;
+    /* 별 위아래 간격 */
+}
+
+.sug {
+    display: flex;
+    margin-left: 30px;
+}
+
+.star {
+    cursor: pointer;
+    transition: color 0.2s;
+    /* 색상 변경 애니메이션 */
+}
+
+.star:hover,
+.star:hover~.star {
+    color: darkorange;
+    /* 호버 시 색상 변경 */
+}
+
+footer {
+    height: 90px;
+    border: 1px solid #72CC82;
+    background-color: #96e6a5;
+}
+
+.footer_content {
+    width: 100%;
+}
+
+.footer_content ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer_content li {
+    width: 20%;
+    margin-left: 50px;
+    line-height: 90px;
+}
+
+.footer_content a {
+    text-decoration: none;
+    color: #000;
+}
+
+.span {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#menu_select {
+    margin-left: 10px;
+}
